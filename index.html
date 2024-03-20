@@ -11,7 +11,7 @@
 
 <body>
     <div class="main__icons">
-        <div class="draggableIcon icon">
+        <div id="myComputerIcon" class="draggableIcon icon">
             <img src="assets/img/face.png" alt="내 컴퓨터">
             <span>내 컴퓨터</span>
         </div>
@@ -24,7 +24,7 @@
     </div>
     <!-- //main__icons -->
 
-    <div class="layer__wrap" style="display: none;">
+    <div class="layer__wrap" id="infoLayer" style="display: none;">
         <div class="layer__inner">
             <div class="layer">
                 <div class="layer__conts">
@@ -43,12 +43,42 @@
                             새로운 프레임워크와 라이브러리를 배우는 것에 능동적으로 참여하여 기술 스택을 지속적으로 확장하고 있습니다
                         </p>
                     </div>
+                    <div class="skill">
+                        <dl>
+                            <dt>html</dt>
+                            <dd>HTML(HyperText Markup Language): 웹 페이지의 구조를 정의하는 데 사용되는 표준 마크업 언어입니다.</dd>
+                            <dt>css</dt>
+                            <dd>CSS(Cascading Style Sheets): 웹 페이지의 스타일을 지정하는 데 사용되는 스타일 시트 언어입니다.</dd>
+                            <dt>javascript</dt>
+                            <dd>JavaScript: 웹 페이지를 동적이고 상호작용이 가능하게 만들어주는 프로그래밍 언어로, 클라이언트 사이드 스크립트로 가장 널리 사용됩니다.</dd>
+                        </dl>
+                        <dl>
+                            <dt>react.js</dt>
+                            <dd>React.js: 사용자 인터페이스를 구축하기 위한 선언적, 효율적이고 유연한 JavaScript 라이브러리입니다.</dd>
+                            <dt>node.js</dt>
+                            <dd>Node.js: 서버 사이드 및 네트워킹 애플리케이션을 구축하기 위한 JavaScript 런타임 환경입니다</dd>
+                            <dt>next.js</dt>
+                            <dd>Next.js: 서버 사이드 렌더링(SSR) 및 정적 웹 사이트 생성을 위한 React 프레임워크입니다.</dd>
+                        </dl>
+                    </div>
+                    <div class="picture"></div>
                 </div>
                 <div class="layer__footer"></div>
             </div>
         </div>
     </div>
     <!-- //layer__wrap -->
+
+    <script>
+        document.getElementById('myComputerIcon').addEventListener('click', function () {
+            let layer = document.getElementById('infoLayer');
+            if (layer.style.display === "none") {
+                layer.style.display = "block"; // 레이어를 보이게 함
+            } else {
+                layer.style.display = "none"; // 레이어를 숨김
+            }
+        });
+    </script>
 </body>
 
 </html>

@@ -187,3 +187,36 @@ li {
         }
     }
 }
+
+/* 메인 - 샘플 */
+.main__sample {
+    padding: 40px 0;
+
+    .sample {
+        margin-bottom: 100px;
+
+        h3 {
+            font-size: 24px;
+            font-family: var(--fontG);
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-family: var(--fontN);
+            margin-bottom: 10px;
+            line-height: 1.5;
+            color: #666;
+        }
+
+        .result {
+            font-family: var(--fontN);
+            line-height: 1.5;
+            color: #666;
+        }
+    }
+}
+
+/* 푸터 */
+#footer {
+    height: 400px;
+}
