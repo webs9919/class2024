@@ -307,6 +307,56 @@ body {
         .layer {
             width: 95vw;
             height: 95vh;
+
+            .layer__conts {
+                .picture {
+                    ul {
+                        li {
+                            width: 33.3333%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .layer__inner {
+        .layer {
+            .layer__conts {
+                .skill {
+                    flex-direction: column;
+
+                    dl {
+                        width: 100%;
+                    }
+                }
+
+                .picture {
+                    ul {
+                        li {
+                            width: 50%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .layer__inner {
+        .layer {
+            .layer__conts {
+                .picture {
+                    ul {
+                        li {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
         }
     }
 }
