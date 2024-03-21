@@ -99,6 +99,20 @@
 :root {
     --fontN: "nanumSquareNeo";
     --fontG: "GmarketSans";
+
+    --black: #000;
+    --black100: #111;
+    --black200: #444;
+    --black300: #666;
+    --black400: #bbb;
+    --black500: #eee;
+
+    --white: #fff;
+    --white100: #f1f1f1;
+    --white200: #e7e7e7;
+    --white300: #dddddd;
+    --white400: #d1d1d1;
+    --white500: #c7c7c7;
 }
 
 /* 여백 초기화 */
@@ -131,92 +145,56 @@ li {
     text-align: center;
     padding: 40px;
     border-bottom: 1px dashed #dcdcdc;
+}
 
-    h1 {
-        margin-bottom: 20px;
+#header h1 {
+    margin-bottom: 20px;
+}
 
-        a {
-            font-family: var(--fontG);
-            font-size: 4vw;
-            color: #161366;
+#header h1 a {
+    font-family: var(--fontG);
+    font-size: 4vw;
+    color: #161366;
+}
 
-            @media (max-width: 800px) {
-                font-size: 30px;
-            }
-        }
-    }
-
-    nav {
-        ul {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-
-            li {
-                margin: 2px;
-
-                a {
-                    font-family: var(--fontN);
-                    border: 1px solid #161366;
-                    padding: 10px 20px;
-                    display: inline-block;
-                    color: #161366;
-                }
-            }
-        }
+@media (max-width: 800px) {
+    #header h1 a {
+        font-size: 30px;
     }
 }
 
-/* 메인 - 메뉴 */
-.main__menu {
-    padding: 40px 0;
-    border-bottom: 1px dashed #dcdcdc;
-
-    ul {
-        li {
-            a {
-                color: #161366;
-                line-height: 1.7;
-                font-family: var(--fontN);
-
-                &:hover {
-                    text-decoration: underline;
-                    text-underline-position: under;
-                }
-            }
-        }
-    }
+#header nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-/* 메인 - 샘플 */
+#header nav ul li {
+    margin: 2px;
+}
+
+#header nav ul li a {
+    font-family: var(--fontN);
+    border: 1px solid #161366;
+    padding: 10px 20px;
+    display: inline-block;
+    color: #161366;
+}
+
+/* main__sample */
 .main__sample {
-    padding: 40px 0;
-
-    .sample {
-        margin-bottom: 100px;
-
-        h3 {
-            font-size: 24px;
-            font-family: var(--fontG);
-            margin-bottom: 10px;
-        }
-
-        p {
-            font-family: var(--fontN);
-            margin-bottom: 10px;
-            line-height: 1.5;
-            color: #666;
-        }
-
-        .result {
-            font-family: var(--fontN);
-            line-height: 1.5;
-            color: #666;
-        }
-    }
+    padding: 40px;
 }
 
-/* 푸터 */
-#footer {
-    height: 400px;
+.main__sample .sample {}
+
+.main__sample .sample h3 {
+    font-size: 30px;
+    font-family: var(--fontG);
+    margin-bottom: 10px;
+}
+
+.main__sample .sample p {
+    font-size: 16px;
+    font-family: var(--fontN);
 }
