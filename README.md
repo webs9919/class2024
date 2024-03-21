@@ -1,8 +1,8 @@
 # 오늘의 수업
 [메인 페이지](https://webs9919.github.io/class2024/)     
 
-[자바스크립트](https://webs9919.github.io/class2024/javascript/index.html)
-[MySQL](https://webs9919.github.io/class2024/mysql/index.html)
+[자바스크립트](https://webs9919.github.io/class2024/javascript/index.html)   
+[MySQL](https://webs9919.github.io/class2024/mysql/index.html)   
 
 # vscode 확장 프로그램
 Live Server : 웹페이지 미리보기   
