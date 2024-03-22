@@ -67,6 +67,12 @@
             color: #78A898;
         }
 
+        main nav {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+        }
+
         main nav ul {
             display: flex;
         }
@@ -88,15 +94,18 @@
             background-color: #78A898;
             color: #fff;
         }
+
+        #three-container {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
     </style>
 </head>
 
 <body>
     <div id="three-container"></div>
     <main>
-        <h1>
-            <a href="index.html">quiz</a>
-        </h1>
         <nav>
             <ul>
                 <li><a href="quiz01.html">quiz01</a></li>
@@ -133,9 +142,9 @@
                 fov: 80
             });
 
-            root.renderer.setClearColor(0x000000);
+            root.renderer.setClearColor(0xffffff);
             root.renderer.setPixelRatio(window.devicePixelRatio || 1);
-            root.camera.position.set(0, 0, 250);
+            root.camera.position.set(0, 0, 300);
 
             new THREE.FontLoader().load('https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/droid_sans_bold.typeface.js', function (font) {
 
