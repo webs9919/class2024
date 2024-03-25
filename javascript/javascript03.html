@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 :: 데이터 실행하기</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/default.min.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1>
+            <a href="index.html">javascript</a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li class="active"><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main__menu container">
+            <ul>
+                <li><a href="#">01. 함수 : 선언적 함수</a></li>
+                <li><a href="#">01. 함수 : 익명 함수</a></li>
+                <li><a href="#">01. 함수 : 매개변수 함수</a></li>
+                <li><a href="#">01. 함수 : 리턴값 함수</a></li>
+                <li><a href="#">01. 함수 : 매개변수 + 리턴값 함수</a></li>
+
+                <li><a href="#">01. 화살표 함수 : 선언적 함수</a></li>
+                <li><a href="#">01. 화살표 함수 : 익명 함수</a></li>
+                <li><a href="#">01. 화살표 함수 : 매개변수 함수</a></li>
+                <li><a href="#">01. 화살표 함수 : 리턴값 함수</a></li>
+                <li><a href="#">01. 화살표 함수 : 매개변수 + 리턴값 함수</a></li>
+
+                <li><a href="#">01. 함수 유형 : 함수와 매개변수를 이용한 형태</a></li>
+                <li><a href="#">01. 함수 유형 : 함수와 변수를 이용한 형태</a></li>
+                <li><a href="#">01. 함수 유형 : 함수와 배열을 이용한 형태</a></li>
+                <li><a href="#">01. 함수 유형 : 함수와 객체를 이용한 형태</a></li>
+                <li><a href="#">01. 함수 유형 : 함수와 객체 및 배열을 이용한 형태</a></li>
+                <li><a href="#">01. 함수 유형 : 객체 안에 함수를 이용한 형태</a></li>
+                <li><a href="#">01. 함수 유형 : 객체 생성자 함수</a></li>
+                <li><a href="#">01. 함수 유형 : 프로토타입 함수</a></li>
+                <li><a href="#">01. 함수 유형 : 객체 리터릴 함수</a></li>
+
+                <li><a href="#">01. 함수 : 즉시실행 함수</a></li>
+                <li><a href="#">01. 함수 : 파라미터 함수</a></li>
+                <li><a href="#">01. 함수 : 재귀 함수</a></li>
+                <li><a href="#">01. 함수 : 콜백 함수</a></li>
+                <li><a href="#">01. 함수 : 비동기 방식 : 콜백 함수</a></li>
+                <li><a href="#">01. 함수 : 비동기 방식 : 프로미스</a></li>
+                <li><a href="#">01. 함수 : 비동기 방식 : asyne/await</a></li>
+                <li><a href="#">01. 함수 : 중첩 함수</a></li>
+                <li><a href="#">01. 함수 : 클로저</a></li>
+
+                <li><a href="#">01. 클래스 : 기본</a></li>
+                <li><a href="#">01. 클래스 : 상속</a></li>
+
+
+            </ul>
+        </div>
+        <!-- //main__menu -->
+
+        <div class="main__sample container">
+            <div id="sample01" class="sample">
+                <h3>01. 함수 : 선언적 함수</h3>
+                <p>
+                    선언적 함수(Declaration function)는 function 키워드를 사용하여 정의된 함수입니다.
+                </p>
+                <pre><code>{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+
+    console.log(x);
+    console.log(y);
+    console.log(z);
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            javascript
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample01 -->
+        </div>
+        <!-- //main__sample -->
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+
+    </footer>
+    <!-- //footer -->
+
+    <script src="assets/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script>
+        // 01. 함수 : 선언적 함수 
+        {
+            function func() {
+                console.log("01. 함수가 실행되었습니다.");
+            }
+            func();
+        }
+
+        // 02. 함수 : 익명 함수
+        {
+            const func = function () {
+                console.log("02. 함수가 실행되었습니다.");
+            };
+            func();
+        }
+
+        // 03. 함수 : 매개변수 함수
+        {
+            // 선언적 함수
+            function func(str) {
+                console.log(str);
+            }
+            func("03. 함수가 실행되었습니다.");
+
+            // 익명 함수
+            const func1 = function (str) {
+                console.log(str);
+            }
+            func1("03. 함수가 실행되었습니다.");
+        }
+
+        // 04. 함수 : 리턴값 함수
+        {
+            // 선언적 함수
+            function func() {
+                return "04. 함수가 실행되었습니다.";
+            }
+            console.log(func());
+
+            // 익명 함수
+            const func1 = function () {
+                return "04. 함수가 실행되었습니다.";
+            }
+            console.log(func1());
+        }
+
+        // 05. 함수 : 매개변수 + 리턴값 함수
+        {
+            // 선언적 함수
+            function func(str) {
+                return str;
+            }
+            console.log(func("05. 함수가 실행되었습니다."));
+
+            // 익명함수
+            const func1 = function (str) {
+                return str;
+            }
+            console.log(func1("05. 함수가 실행되었습니다."));
+        }
+        // 06. 화살표 함수 : 선언적 함수 
+        {
+            // 선억적 함수
+            function func() {
+                console.log("06. 함수가 실행되었습니다.");
+            }
+            func();
+
+            func1 = () => {
+                console.log("06. 함수가 실행되었습니다.");
+            }
+            func1();
+        }
+
+        // 07. 화살표 함수 : 익명 함수 
+        {
+            // 익명 함수
+            const func = function () {
+                console.log("07. 함수가 실행되었습니다.");
+            };
+            func();
+
+            // 익명 함수 --> 화살표 함수
+            const func1 = () => {
+                console.log("07. 함수가 실행되었습니다.");
+            };
+            func1();
+        }
+
+        // 08. 화살표 함수 : 매개변수 함수 
+        {
+            // 선언적 함수 
+            func = (str) => {
+                console.log(str);
+            }
+            func("08. 함수가 실행되었습니다.");
+
+            // 익명 함수
+            const func1 = (str) => {
+                console.log(str);
+            }
+            func1("08. 함수가 실행되었습니다.");
+        }
+
+        // 09. 화살표 함수 : 리턴값(결과, 종료)
+        {
+            // 선언적 함수
+            func = () => {
+                return "09. 함수가 실행되었습니다.";
+            }
+            console.log(func());
+
+            // 익명 함수
+            const func1 = () => {
+                return "09. 함수가 실행되었습니다.";
+            }
+            console.log(func1());
+        }
+        // 10. 화살표 함수 : 매개변수 + 리턴값
+        {
+            // 익명 함수(화살표 함수) + 매개변수 + 리턴값
+            const func = (str) => {
+                return str;
+            }
+            console.log(func("10. 함수가 실행되었습니다."));
+
+            // 매개변수 하나이면 괄호 생략 가능
+            const func2 = str => {
+                return str;
+            }
+            console.log(func2("10. 함수가 실행되었습니다."));
+
+            // 리턴 생략
+            const func3 = str => str;
+            console.log(func3("10. 함수가 실행되었습니다."));
+
+            // 선언적 함수(가독성X)
+            func4 = str => str;
+            console.log(func4("10. 함수가 실행되었습니다."));
+
+        }
+    </script>
+</body>
+
+</html>
