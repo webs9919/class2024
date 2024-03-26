@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 02</title>
+    <link rel="stylesheet" href="assets/css/quiz.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1>
+            <a href="index.html">Quiz</a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="quiz01.html">1</a></li>
+                <li class="active"><a href="quiz02.html">2</a></li>
+                <li><a href="quiz03.html">3</a></li>
+                <li><a href="quiz04.html">4</a></li>
+                <li><a href="quiz05.html">5</a></li>
+                <li><a href="quiz06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <div class="quiz__header">
+                    <span class="date"></span>
+                    <span class="type"></span>
+                </div>
+                <div class="quiz__main">
+                    <div class="question">
+                        <em></em>.
+                        <span></span>
+                    </div>
+                    <div class="input">
+                        <input type="text" placeholder="정답을 입력해주세요!">
+                    </div>
+                    <div class="answer"></div>
+                    <div class="desc"></div>
+                </div>
+                <div class="quiz__footer">
+                    <button class="confirm">정답 확인하기</button>
+                </div>
+            </div>
+            <div class="quiz">
+                <div class="quiz__header">
+                    <span class="date"></span>
+                    <span class="type"></span>
+                </div>
+                <div class="quiz__main">
+                    <div class="question">
+                        <em></em>.
+                        <span></span>
+                    </div>
+                    <div class="input">
+                        <input type="text" placeholder="정답을 입력해주세요!">
+                    </div>
+                    <div class="answer"></div>
+                    <div class="desc"></div>
+                </div>
+                <div class="quiz__footer">
+                    <button class="confirm">정답 확인하기</button>
+                </div>
+            </div>
+            <div class="quiz">
+                <div class="quiz__header">
+                    <span class="date"></span>
+                    <span class="type"></span>
+                </div>
+                <div class="quiz__main">
+                    <div class="question">
+                        <em></em>.
+                        <span></span>
+                    </div>
+                    <div class="input">
+                        <input type="text" placeholder="정답을 입력해주세요!">
+                    </div>
+                    <div class="answer"></div>
+                    <div class="desc"></div>
+                </div>
+                <div class="quiz__footer">
+                    <button class="confirm">정답 확인하기</button>
+                </div>
+            </div>
+            <div class="quiz">
+                <div class="quiz__header">
+                    <span class="date"></span>
+                    <span class="type"></span>
+                </div>
+                <div class="quiz__main">
+                    <div class="question">
+                        <em></em>.
+                        <span></span>
+                    </div>
+                    <div class="input">
+                        <input type="text" placeholder="정답을 입력해주세요!">
+                    </div>
+                    <div class="answer"></div>
+                    <div class="desc"></div>
+                </div>
+                <div class="quiz__footer">
+                    <button class="confirm">정답 확인하기</button>
+                </div>
+            </div>
+            <div class="quiz">
+                <div class="quiz__header">
+                    <span class="date"></span>
+                    <span class="type"></span>
+                </div>
+                <div class="quiz__main">
+                    <div class="question">
+                        <em></em>.
+                        <span></span>
+                    </div>
+                    <div class="input">
+                        <input type="text" placeholder="정답을 입력해주세요!">
+                    </div>
+                    <div class="answer"></div>
+                    <div class="desc"></div>
+                </div>
+                <div class="quiz__footer">
+                    <button class="confirm">정답 확인하기</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:webstoyboy@naver.com">webstoyboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        // 문제 정보
+        const quizInfo = [
+            {
+                infoDate: "2021년 1회",
+                infoType: "정보처리기능사",
+                infoNum: "01",
+                infoQuestion: "두 개의 파일의 차이가 있을 때 차이점이 나타난 바이트 위치와 행 번호를 표시하는 UNIX 명령어는?",
+                infoAnswer: "cmp",
+                infoDesc: "mp : 두개의 파일이 어떤 부분이 다른가를 비교할 때에 사용하는 파일 비교 유틸리티 단순히 같은가 다른가를 확인 할 수있으며 몇행의 몇번째 문자가 다른지 확인 가능. <br>diff : 두 개의 파일 간 차이에 대한 정보를 출력하는 파일 비교 유틸리티 cmp 보다 직관적이고 명확하게 비교.<br>comm : 일반적이고 뚜렷한 문자열들을 위해서 두 개의 파일을 비교하는 유틸리티.<br>paste : 1개이상의 파일에서 행을 합치는 명령어."
+            },
+            {
+                infoDate: "2011년 1회",
+                infoType: "정보처리기능사",
+                infoNum: "02",
+                infoQuestion: "주파수분할 다중화 방식에서 각 채널간 간섭을 막기 위해서 일종의 완충지역 역할을 하는 것을 무엇이라고 하는가?",
+                infoAnswer: "가드밴드",
+                infoDesc: "가드밴드(Guard Band)는 주파수분할 다중화 방식에서 각 채널간 간섭을 막기 위해서 일종의 완충지역 역할을 한다."
+            },
+            {
+                infoDate: "2011년 2회",
+                infoType: "정보처리기능사",
+                infoNum: "03",
+                infoQuestion: "사용자의 명령으로 시스템이 수행되고 그에 따른 결과를 나타내 주는 대화식 운영체제는 무엇인가?",
+                infoAnswer: "UNIX",
+                infoDesc: "UNIX는 사용자의 명령으로 시스템이 수행되고 그에 따른 결과를 나타내 주는 대화식 운영체제이다."
+            },
+            {
+                infoDate: "2011년 3회",
+                infoType: "정보처리기능사",
+                infoNum: "04",
+                infoQuestion: "프로세스들이 서로 다른 프로세스가 차지하고 있는 자원을 무한정 기다려 시스템이 멈춘 것처럼 보이는 상태를 무엇이라고 하는가?",
+                infoAnswer: "교착상태",
+                infoDesc: "교착상태(Deadlock)는 2개 이상의 프로세스들이 서로 다른 프로세스가 차지하고 있는 자원을 무한정 기다려 시스템이 멈춘 것처럼 보이는 상태이다."
+            },
+            {
+                infoDate: "2011년 3회",
+                infoType: "정보처리기능사",
+                infoNum: "05",
+                infoQuestion: "실행중인 프로그램이나 시스템을 중지시킬 수 있는 수행중단기능(break on)을 설정할 수 있는 도스 파일은?",
+                infoAnswer: "config.sys",
+                infoDesc: "io.sys : 입출력 관련 기능을 담당하는 핵심파일(커널)<br>command.com : 명령어 해석기<br>config.sys : 장치 및 기타 설정 파일<br>autoexec.bat : 부팅후 자동실행 파일"
+            }
+        ]
+
+        // 선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+        const quizDate = quizWrap.querySelectorAll(".quiz__header .date");
+        const quizType = quizWrap.querySelectorAll(".quiz__header .type");
+        const quizNum = quizWrap.querySelectorAll(".question em");
+        const quizQuestion = quizWrap.querySelectorAll(".question span");
+        const quizInput = quizWrap.querySelectorAll(".input input");
+        const quizAnswer = quizWrap.querySelectorAll(".answer");
+        const quizDesc = quizWrap.querySelectorAll(".desc");
+        const quizConfirm = quizWrap.querySelectorAll(".confirm");
+
+        // 문제 출력
+        // quizDate[0].textContent = quizInfo[0].infoDate;
+        // quizDate[1].textContent = quizInfo[1].infoDate;
+        // quizDate[2].textContent = quizInfo[2].infoDate;
+        // quizDate[3].textContent = quizInfo[3].infoDate;
+        // quizDate[4].textContent = quizInfo[4].infoDate;
+
+        // quizType[0].textContent = quizInfo[0].infoType;
+        // quizType[1].textContent = quizInfo[1].infoType;
+        // quizType[2].textContent = quizInfo[2].infoType;
+        // quizType[3].textContent = quizInfo[3].infoType;
+        // quizType[4].textContent = quizInfo[4].infoType;
+
+        // quizNum[0].textContent = quizInfo[0].infoNum;
+        // quizNum[1].textContent = quizInfo[1].infoNum;
+        // quizNum[2].textContent = quizInfo[2].infoNum;
+        // quizNum[3].textContent = quizInfo[3].infoNum;
+        // quizNum[4].textContent = quizInfo[4].infoNum;
+
+        // quizQuestion[0].textContent = quizInfo[0].infoQuestion;
+        // quizQuestion[1].textContent = quizInfo[1].infoQuestion;
+        // quizQuestion[2].textContent = quizInfo[2].infoQuestion;
+        // quizQuestion[3].textContent = quizInfo[3].infoQuestion;
+        // quizQuestion[4].textContent = quizInfo[4].infoQuestion;
+
+        // quizAnswer[0].textContent = quizInfo[0].infoAnswer;
+        // quizAnswer[1].textContent = quizInfo[1].infoAnswer;
+        // quizAnswer[2].textContent = quizInfo[2].infoAnswer;
+        // quizAnswer[3].textContent = quizInfo[3].infoAnswer;
+        // quizAnswer[4].textContent = quizInfo[4].infoAnswer;
+
+        // quizDesc[0].textContent = quizInfo[0].infoDesc;
+        // quizDesc[1].textContent = quizInfo[1].infoDesc;
+        // quizDesc[2].textContent = quizInfo[2].infoDesc;
+        // quizDesc[3].textContent = quizInfo[3].infoDesc;
+        // quizDesc[4].textContent = quizInfo[4].infoDesc;
+
+        // for문
+        // for (let i = 0; i <= 4; i++) {
+        //     quizDate[i].textContent = quizInfo[i].infoDate;
+        //     quizType[i].textContent = quizInfo[i].infoType;
+        //     quizNum[i].textContent = quizInfo[i].infoNum;
+        //     quizQuestion[i].textContent = quizInfo[i].infoQuestion;
+        //     quizAnswer[i].textContent = quizInfo[i].infoAnswer;
+        //     quizDesc[i].textContent = quizInfo[i].infoDesc;
+        // }
+
+        // forEach()
+        quizInfo.forEach((e, i) => {
+            quizDate[i].innerHTML = quizInfo[i].infoDate;
+            quizType[i].innerHTML = quizInfo[i].infoType;
+            quizNum[i].innerHTML = quizInfo[i].infoNum;
+            quizQuestion[i].innerHTML = quizInfo[i].infoQuestion;
+            quizAnswer[i].innerHTML = quizInfo[i].infoAnswer;
+            quizDesc[i].innerHTML = quizInfo[i].infoDesc;
+        })
+
+        // 정답/해설 숨기기
+        // quizAnswer[0].classList.add("none");
+        // quizAnswer[1].classList.add("none");
+        // quizAnswer[2].classList.add("none");
+        // quizAnswer[3].classList.add("none");
+        // quizAnswer[4].classList.add("none");
+
+        // quizDesc[0].classList.add("none");
+        // quizDesc[1].classList.add("none");
+        // quizDesc[2].classList.add("none");
+        // quizDesc[3].classList.add("none");
+        // quizDesc[4].classList.add("none");
+
+        // for문
+        // for (let i = 0; i < quizInfo.length; i++) {
+        //     quizAnswer[i].classList.add("none");
+        //     quizDesc[i].classList.add("none");
+        // }
+
+        // forEach()
+        quizInfo.forEach((e, i) => {
+            quizAnswer[i].classList.add("none");
+            quizDesc[i].classList.add("none");
+        });
+
+        // 정답확인
+        quizConfirm.forEach(function (btn, num) {
+            btn.addEventListener("click", function () {
+                const userAnswer = quizInput[num].value         // 사용자가 정답
+                const correctAnswer = quizInfo[num].infoAnswer  // 정답지의 정답
+
+                if (userAnswer == correctAnswer) {
+                    alert("정답입니다.");
+                } else {
+                    alert("오답입니다.");
+                }
+
+                quizAnswer[num].classList.remove("none");
+                quizDesc[num].classList.remove("none");
+            })
+        })
+
+    </script>
+</body>
+
+</html>

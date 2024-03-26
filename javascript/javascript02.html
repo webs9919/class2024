@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 :: 데이터 불러오기</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/default.min.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1>
+            <a href="index.html">javascript</a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li class="active"><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="main__menu container">
+            <ul>
+                <li><a href="#">01. 변수 : 데이터 불러오기</a></li>
+                <li><a href="#">02. 상수 : 데이터 불러오기</a></li>
+                <li><a href="#">03. 배열 : 데이터 불러오기</a></li>
+                <li><a href="#">04. 배열 : 데이터 불러오기 : 갯수</a></li>
+                <li><a href="#">05. 배열 : 데이터 불러오기 : for()문</a></li>
+                <li><a href="#">06. 배열 : 데이터 불러오기 : forEach()</a></li>
+                <li><a href="#">07. 배열 : 데이터 불러오기 : for of</a></li>
+                <li><a href="#">08. 배열 : 데이터 불러오기 : for in</a></li>
+                <li><a href="#">09. 배열 : 데이터 불러오기 : map()</a></li>
+                <li><a href="#">10. 배열 : 데이터 불러오기 : filter()</a></li>
+                <li><a href="#">11. 배열 : 데이터 불러오기 : 배열 펼침연산자</a></li>
+                <li><a href="#">12. 배열 : 데이터 불러오기 : 배열 구조 분해 할당</a></li>
+                <li><a href="#">13. 객체 : 데이터 불러오기 : 기본</a></li>
+                <li><a href="#">14. 객체 : 데이터 불러오기 : Object.keys()</a></li>
+                <li><a href="#">15. 객체 : 데이터 불러오기 : Object.values()</a></li>
+                <li><a href="#">16. 객체 : 데이터 불러오기 : Object.entries()</a></li>
+                <li><a href="#">17. 객체 : 데이터 불러오기 : Object.assign()</a></li>
+                <li><a href="#">18. 객체 : 데이터 불러오기 : hasOwnProperty()</a></li>
+                <li><a href="#">19. 객체 : 데이터 불러오기 : for in</a></li>
+                <li><a href="#">20. 객체 : 데이터 불러오기 : 객체 펼침연산자</a></li>
+                <li><a href="#">21. 객체 : 데이터 불러오기 : 객체 구조 분해 할당</a></li>
+                <li><a href="#">22. 서버 데이터 불러오기 : XMLHttpRequest</a></li>
+                <li><a href="#">23. 서버 데이터 불러오기 : fetch API</a></li>
+
+            </ul>
+        </div>
+        <!-- //main__menu -->
+
+        <div class="main__sample container">
+            <div id="sample01" class="sample">
+                <h3>01. 변수 : 데이터 저장</h3>
+                <p>
+                    자바스크립트에서 변수는 값을 저정하고 참조하는데 사용합니다.
+                    변수를 사용하면 데이터를 저장하고 나중에 해당 데이터를 재사용 할 수 있습니다.
+                </p>
+                <pre><code>{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+
+    console.log(x);
+    console.log(y);
+    console.log(z);
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            javascript
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample01 -->
+        </div>
+        <!-- //main__sample -->
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+
+    </footer>
+    <!-- //footer -->
+
+    <script src="assets/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script>
+        // 01. 변수 : 데이터 불러오기
+        {
+            let x = 100, y = 200, z = "javascript";
+
+            console.log("01. 변수 : 데이터 불러오기");
+            console.log(x, y, z);
+        }
+        // 02. 상수 : 데이터 불러오기
+        {
+            const x = 100, y = 200, z = "javascript";
+
+            console.log("02. 상수 : 데이터 불러오기");
+            console.log(x, y, z);
+        }
+        // 03. 배열 : 데이터 불러오기
+        {
+            const arr = [100, 200, "javascript"];
+
+            console.log("03. 배열 : 데이터 불러오기");
+            console.log(arr[0], arr[1], arr[2]);
+        }
+        // 04. 배열 : 데이터 불러오기 : 갯수
+        {
+            const arr = [100, 200, "javascript"];
+
+            console.log("04. 배열 : 데이터 불러오기 : 갯수");
+            console.log(arr.length);
+        }
+        // 05. 배열 : 데이터 불러오기 : for()문
+        {
+            const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+            console.log("05. 배열 : 데이터 불러오기 : for()문");
+            for (let i = 0; i < arr.length; i++) {
+                console.log(arr[i]);
+            }
+        }
+        // 06. 배열 : 데이터 불러오기 : forEach()
+        {
+            const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+            console.log("06. 배열 : 데이터 불러오기 : forEach()");
+            // 01
+            arr.forEach(function (element) {
+                console.log(element);
+            });
+            // 02
+            arr.forEach(function (element, index) {
+                console.log(index);
+            });
+            // 03
+            arr.forEach(function (element, index, array) {
+                console.log(array);
+            });
+
+            // 화살표 함수
+            // 01
+            arr.forEach((e) => {
+                console.log(e);
+            });
+            // 02
+            arr.forEach(e => {
+                console.log(e);
+            });
+            // 03
+            arr.forEach(e => console.log(e))
+        }
+        // 07. 배열 : 데이터 불러오기 : for of
+        {
+            const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+            console.log("07. 배열 : 데이터 불러오기 : for of");
+            for (let element of arr) {
+                console.log(element);
+            }
+        }
+        // 08. 배열 : 데이터 불러오기 : for in
+        {
+            const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+            console.log("08. 배열 : 데이터 불러오기 : for in");
+            for (let element in arr) {
+                console.log(arr[element])
+            }
+        }
+        // 09. 배열 : 데이터 불러오기 : map()
+        {
+            const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            // 01
+            console.log("09. 배열 : 데이터 불러오기 : map()");
+
+            arr.map(function (element) {
+                console.log(element);
+            });
+
+            arr.map(function (element, index) {
+                console.log(index);
+            });
+
+            arr.map(function (element, index, array) {
+                console.log(array);
+            });
+        }
+        // 10. 배열 : 데이터 불러오기 : filter()
+        // 11. 배열 : 데이터 불러오기 : 배열 펼침연산자
+        // 12. 배열 : 데이터 불러오기 : 배열 구조 분해 할당
+        // 13. 객체 : 데이터 불러오기 : 기본
+        // 14. 객체 : 데이터 불러오기 : Object.keys()
+        // 15. 객체 : 데이터 불러오기 : Object.values()
+        // 16. 객체 : 데이터 불러오기 : Object.entries()
+        // 17. 객체 : 데이터 불러오기 : Object.assign()
+        // 18. 객체 : 데이터 불러오기 : hasOwnProperty()
+        // 19. 객체 : 데이터 불러오기 : for in
+        // 20. 객체 : 데이터 불러오기 : 객체 펼침연산자
+        // 21. 객체 : 데이터 불러오기 : 객체 구조 분해 할당
+        // 22. 서버 데이터 불러오기 : XMLHttpRequest
+        // 23. 서버 데이터 불러오기 : fetch API
+    </script>
+</body>
+
+</html>
