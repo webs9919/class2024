@@ -22,6 +22,7 @@
                 <li><a href="mysql03.html">데이터베이스</a></li>
                 <li><a href="mysql04.html">테이블</a></li>
                 <li class="active"><a href="mysql05.html">SELECT</a></li>
+                <li><a href="mysql06.html">ALTER</a></li>
             </ul>
         </nav>
     </header>
@@ -243,7 +244,7 @@
 
                 <h4>memberID가 5보다 크고 10보다 작은 데이터</h4>
                 <div class="info">
-                    SELECT * FROM members3 WHERE memberID &gt; 5 AND memberID &lt; 10; </div>
+                    SELECT * FROM members WHERE memberID &gt; 5 AND memberID &lt; 10; </div>
                 <pre><code class="language-js">mysql> SELECT * FROM members3 WHERE memberID > 5 AND memberID < 10;
 +----------+-----------+---------+--------+----------+------------+
 | memberID | youName   | youPass | youAge | youBirth | regTime    |
