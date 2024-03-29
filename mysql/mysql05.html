@@ -482,9 +482,18 @@
 
                 <h4>나이가 30살 이상, memberID가 2 또는 15인 멤버</h4>
                 <div class="info">
-                    SELECT * FROM members WHERE
+                    SELECT * FROM members WHERE youAge >= 30 AND memberID IN(2,15);
                 </div>
-                <pre><code class="language-js"></code></pre>
+                <div class="info">
+                    SELECT * FROM members WHERE youAge >= 30 AND (memberID = 2 OR memberID = 15);
+                </div>
+                <pre><code class="language-js">mysql> SELECT * FROM members WHERE youAge >= 30 AND memberID IN(2,15);
++----------+-----------+---------+--------+----------+------------+
+| memberID | youName   | youPass | youAge | youBirth | regTime    |
++----------+-----------+---------+--------+----------+------------+
+|       15 | 박진아    | 1232    |     33 |   990304 | 1023958375 |
++----------+-----------+---------+--------+----------+------------+
+1 row in set (0.00 sec)</code></pre>
 
 
             </div>
