@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 03</title>
+    <link rel="stylesheet" href="assets/css/quiz.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1>
+            <a href="index.html">Quiz</a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="quiz01.html">1</a></li>
+                <li><a href="quiz02.html">2</a></li>
+                <li class="active"><a href="quiz03.html">3</a></li>
+                <li><a href="quiz04.html">4</a></li>
+                <li><a href="quiz05.html">5</a></li>
+                <li><a href="quiz06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap"></div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:webstoyboy@naver.com">webstoyboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        // 선택자 
+        const quizWrap = document.querySelector(".quiz__wrap");
+
+        // 문제 정보
+        const quizInfo = [
+            {
+                date: "2021년 1회",
+                type: "웹디자인기능사",
+                question: "다음 중 디자인의 기본 요소들로 옳은 것은?",
+                choices: {
+                    1: "선, 색채, 공간, 수량",
+                    2: "점, 선, 면, 질감",
+                    3: "시간, 수량, 구조, 공간",
+                    4: "면, 구조, 공간, 수량"
+                },
+                answer: "2",
+                desc: "디자인의 기본 요소에는 점, 선, 면, 질감이 있습니다."
+            }, {
+                date: "2006년 5회",
+                type: "정보처리 기능사",
+                question: "이항(binary) 연산에 해당하는 것은?",
+                choices: {
+                    1: "COMPLEMENT",
+                    2: "AND",
+                    3: "ROTATE",
+                    4: "SHIFT"
+                },
+                answer: "2",
+                desc: "단항연산 : ROTATE, SHIFT, MOVE, NOT(COMPLEMENT)"
+            }, {
+                date: "2006년 5회",
+                type: "정보처리 기능사",
+                question: "프로그램이 컴퓨터의 기종에 관계없이 수행될 수 있는 성질을 의미하는 것은?",
+                choices: {
+                    1: "가용성",
+                    2: "신뢰성",
+                    3: "호환성",
+                    4: "안전성"
+                },
+                answer: "3",
+                desc: "컴퓨터의 기종에 관계없이 동작하므로 호환성입니다. 호환성이란 까스활명수, 까스명수, 베아제등 이름은 틀리지만 소화제의 기능을 하는것처럼 기종에 관계없이 동작할수 있는 것들을 말합니다."
+            }, {
+                date: "2006년 5회",
+                type: "정보처리 기능사",
+                question: "제어장치가 앞의 명령 실행을 완료한 후, 다음에 실행 할 명령을 기억장치로부터 가져오는 동작을 완료할 때까지의 주기를 무엇이라고 하는가?",
+                choices: {
+                    1: "fetch cycle",
+                    2: "transfer cycle",
+                    3: "search time",
+                    4: "run time"
+                },
+                answer: "1",
+                desc: "명령어를 가지고 오는것을 fetch cycle 이라고 합니다."
+            }, {
+                date: "2006년 5회",
+                type: "정보처리 기능사",
+                question: "제어장치가 앞의 명령 실행을 완료한 후, 다음에 실행 할 명령을 기억장치로부터 가져오는 동작을 완료할 때까지의 주기를 무엇이라고 하는가?",
+                choices: {
+                    1: "fetch cycle",
+                    2: "transfer cycle",
+                    3: "search time",
+                    4: "run time"
+                },
+                answer: "1",
+                desc: "명령어를 가지고 오는것을 fetch cycle 이라고 합니다."
+            }, {
+                date: "2006년 5회",
+                type: "정보처리 기능사",
+                question: "제어장치가 앞의 명령 실행을 완료한 후, 다음에 실행 할 명령을 기억장치로부터 가져오는 동작을 완료할 때까지의 주기를 무엇이라고 하는가?",
+                choices: {
+                    1: "fetch cycle",
+                    2: "transfer cycle",
+                    3: "search time",
+                    4: "run time"
+                },
+                answer: "1",
+                desc: "명령어를 가지고 오는것을 fetch cycle 이라고 합니다."
+            }
+        ]
+
+        // 문제 출력
+        const updateQuiz = () => {
+            const quizArray = [];
+
+            quizInfo.forEach((quiz, index) => {
+                quizArray.push(`
+                    <div class="quiz">
+                        <div class="quiz__header">${quiz.date} ${quiz.type}</div>
+                        <div class="quiz__main">
+                            <div class="question">${index + 1}. ${quiz.question}</div>
+                            <div class="choices">
+                                <label for="choice1-${index}">
+                                    <input type="radio" id="choice1-${index}" name="choice-${index}" value="1">
+                                    <span>${quiz.choices[1]}</span>
+                                </label>
+                                <label for="choice2-${index}">
+                                    <input type="radio" id="choice2-${index}" name="choice-${index}" value="2">
+                                    <span>${quiz.choices[2]}</span>
+                                </label>
+                                <label for="choice3-${index}">
+                                    <input type="radio" id="choice3-${index}" name="choice-${index}" value="3">
+                                    <span>${quiz.choices[3]}</span>
+                                </label>
+                                <label for="choice4-${index}">
+                                    <input type="radio" id="choice4-${index}" name="choice-${index}" value="4">
+                                    <span>${quiz.choices[4]}</span>
+                                </label>
+                            </div>
+                            <div class="answer none">${quiz.answer}</div>
+                            <div class="desc none">${quiz.desc}</div>
+                        </div>
+                        <div class="quiz__footer">
+                            <button class="confirm">정답 확인하기</button>
+                        </div>
+                    </div>
+                `)
+
+                quizWrap.innerHTML = quizArray.join("");
+            });
+
+            console.log(quizArray);
+        }
+        updateQuiz();
+    </script>
+</body>
+
+</html>

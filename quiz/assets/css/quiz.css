@@ -164,7 +164,7 @@ body::after {
 /* quiz__wrap */
 .quiz__wrap {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -184,6 +184,8 @@ body::after {
 
 .quiz__main .question {
     margin-bottom: 20px;
+    font-size: 24px;
+    line-height: 1.4;
 }
 
 .quiz__main .question em {
@@ -252,7 +254,6 @@ body::after {
     box-shadow: 1px 1px 3px #422e9160;
     background-color: #e9e4ff60;
 }
-
 
 .quiz__main .input input {
     width: 100%;
