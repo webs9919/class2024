@@ -85,6 +85,9 @@
             }
         ]
 
+        // 변수
+        let currentIndex = 0;   // 현재 문제에 대한 값
+
         // 문제 출력 
         const updateQuiz = (index) => {
             let quizWrapTag = `
@@ -110,21 +113,63 @@
                                 <span>${quizInfo[index].choices[3]}</span>
                             </label>
                         </div>
-                        <div class="answer">${quizInfo[index].answer}</div>
-                        <div class="desc">${quizInfo[index].desc}</div>
+                        <div class="answer none">${quizInfo[index].answer}</div>
+                        <div class="desc none">${quizInfo[index].desc}</div>
                     </div>
                     <div class="quiz__footer">
                         <button class="confirm">정답 확인하기</button>
+                        <button class="next none">다음 문제</button>
                     </div>
                 </div>
             `
             quizWrap.innerHTML = quizWrapTag;
+
+            // 선택자 
+            const quizConfirm = quizWrap.querySelector(".confirm");
+            const quizNext = quizWrap.querySelector(".next");
+
+            // 정답 버튼을 클릭
+            quizConfirm.addEventListener("click", () => {
+                const quizChecked = quizWrap.querySelector("input[name='choice']:checked"); // 사용자가 클릭한 정답 확인
+
+                if (quizChecked) {
+                    const userAnswer = quizChecked.value;               // 사용자가 클릭한 정답
+                    const quizAnswer = quizInfo[currentIndex].answer    // 정답지의 정답
+                    const quizElement = quizWrap.querySelector(".quiz");
+                    const answerElement = quizWrap.querySelector(".answer");
+                    const descElement = quizWrap.querySelector(".desc");
+
+                    // 사용자 정답과 정답지 정답을 비교
+                    if (userAnswer === quizAnswer) {
+                        quizElement.classList.add("good");
+                    } else {
+                        quizElement.classList.add("bad");
+                        answerElement.classList.remove("none")
+                    }
+                    descElement.classList.remove("none");   // 설명 추가
+                    quizConfirm.classList.add("none");  // 정답 버튼 삭제
+                    quizNext.classList.remove("none");  // 다음 버튼 추가
+                } else {
+                    alert("보기를 선택해주세요! 🥳");
+                }
+            });
+
+            // 다음 문제 버튼을 클릭
+            quizNext.addEventListener("click", () => {
+                if (currentIndex < quizInfo.length - 1) {
+                    currentIndex++;             // 문제 번호 증가
+                    updateQuiz(currentIndex);   // 퀴즈 반영
+                } else {
+                    alert("퀴즈가 종료되었습니다. 🥳");
+                }
+            });
         }
 
         // 페이지가 로드된 후 실행
         document.addEventListener("DOMContentLoaded", () => {
-            updateQuiz(4);
+            updateQuiz(currentIndex);
         });
+
     </script>
 </body>
 
