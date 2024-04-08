@@ -28,6 +28,7 @@
 
     <main id="main">
         <div class="quiz__wrap"></div>
+        <div class="quiz__check">정답 확인</div>
     </main>
     <!-- //main -->
 
@@ -39,6 +40,7 @@
     <script>
         // 선택자
         const quizWrap = document.querySelector(".quiz__wrap");
+        const quizCheck = document.querySelector(".quiz__check");
 
         // 문제 정보
         let quizInfo = [];
@@ -91,19 +93,19 @@
                             <div class="question">${index + 1}. ${quiz.question}</div>
                             <div class="choices">
                                 <label for="choice${index}-1">
-                                    <input type="radio" id="choice${index}-1" name="choice-${index}" value="1">
+                                    <input type="radio" id="choice${index}-1" name="choice-${index}" value="${quiz.choices[0]}">
                                     <span>${quiz.choices[0]}</span>
                                 </label>
                                 <label for="choice${index}-2">
-                                    <input type="radio" id="choice${index}-2" name="choice-${index}" value="2">
+                                    <input type="radio" id="choice${index}-2" name="choice-${index}" value="${quiz.choices[1]}">
                                     <span>${quiz.choices[1]}</span>
                                 </label>
                                 <label for="choice${index}-3">
-                                    <input type="radio" id="choice${index}-3" name="choice-${index}" value="3">
+                                    <input type="radio" id="choice${index}-3" name="choice-${index}" value="${quiz.choices[2]}">
                                     <span>${quiz.choices[2]}</span>
                                 </label>
                                 <label for="choice${index}-4">
-                                    <input type="radio" id="choice${index}-4" name="choice-${index}" value="4">
+                                    <input type="radio" id="choice${index}-4" name="choice-${index}" value="${quiz.choices[3]}">
                                     <span>${quiz.choices[3]}</span>
                                 </label>
                             </div>
@@ -116,6 +118,22 @@
 
             quizWrap.innerHTML = quizArray.join("");
         }
+
+        // 정답 확인
+        quizCheck.addEventListener("click", () => {
+            const quizElements = document.querySelectorAll(".quiz");
+
+            quizElements.forEach((quizElement, index) => {
+                const quizChecked = quizElement.querySelector(`input[name="choice-${index}"]:checked`);  // 체크한 정답
+                const quizAnswer = quizElement.querySelector(".answer");
+                const quizDesc = quizElement.querySelector(".desc");
+
+                if (quizChecked) {
+                    const userAnswer = quizChecked.value;
+                    console.log(userAnswer)
+                }
+            });
+        });
 
         // 페이지가 로드된 후 실행
         document.addEventListener("DOMContentLoaded", () => {
