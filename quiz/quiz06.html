@@ -109,8 +109,8 @@
                                     <span>${quiz.choices[3]}</span>
                                 </label>
                             </div>
-                            <div class="answer">${quiz.answer}</div>
-                            <div class="desc">${quiz.desc}</div>
+                            <div class="answer none">${quiz.answer}</div>
+                            <div class="desc none">${quiz.desc}</div>
                         </div>
                     </div>
                 `)
@@ -122,6 +122,7 @@
         // 정답 확인
         quizCheck.addEventListener("click", () => {
             const quizElements = document.querySelectorAll(".quiz");
+            let correctCount = 0; // 맞은 문제의 개수를 세는 변수
 
             quizElements.forEach((quizElement, index) => {
                 const quizChecked = quizElement.querySelector(`input[name="choice-${index}"]:checked`);  // 체크한 정답
@@ -129,10 +130,26 @@
                 const quizDesc = quizElement.querySelector(".desc");
 
                 if (quizChecked) {
-                    const userAnswer = quizChecked.value;
-                    console.log(userAnswer)
+                    const userAnswer = quizChecked.value;   // 사용자 정답
+                    const correctAnswer = quizAnswer.textContent;   // 정답지 정답
+
+                    if (userAnswer === correctAnswer) {
+                        console.log("정답");
+                        quizElement.classList.add("good");
+                        quizDesc.classList.remove("none");
+                        correctCount++;     // 맞은 문제의 개수 증가
+                    } else {
+                        console.log("오답");
+                        quizElement.classList.add("bad");
+                        quizAnswer.classList.remove("none");
+                        quizDesc.classList.remove("none");
+                    }
                 }
             });
+            // 모든 문제를 확인한 후 점수 계산 및 표시
+            const totalScore = ((correctCount / quizElements.length) * 100).toFixed(2); // 점수 계산
+            alert(`당신의 점수는 ${totalScore}점입니다. 맞은 문제 수: ${correctCount}/${quizElements.length}`);
+
         });
 
         // 페이지가 로드된 후 실행
