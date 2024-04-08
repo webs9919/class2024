@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            width: 100%;
+        }
+
+        #main {
+            width: 100%;
+            height: calc(100vh - 120px);
+            display: flex;
+        }
+
+        #header {
+            width: 200px;
+            height: 100%;
+        }
+
+        #header .logo {
+            height: 10%;
+            background-color: #e3e3e3;
+        }
+
+        #header .menu {
+            height: 90%;
+            background-color: #b0b0b0;
+        }
+
+        #contents {
+            width: 400px;
+            height: 100%;
+        }
+
+        #contents .banner {
+            height: 15%;
+            background-color: #d1d1d1;
+        }
+
+        #contents .notice {
+            height: 35%;
+            background-color: #c7c7c7;
+        }
+
+        #contents .gallery {
+            height: 35%;
+            background-color: #bcbcbc;
+        }
+
+        #contents .link {
+            height: 15%;
+            background-color: #8f8f8f;
+        }
+
+        #slider {
+            width: calc(100% - 600px);
+            height: 100%;
+            background-color: #7a7a7a;
+        }
+
+        #footer {
+            width: 100%;
+            display: flex;
+        }
+
+        #footer .footer1 {
+            width: 20%;
+            height: 120px;
+            background-color: #d9d9d9;
+        }
+
+        #footer .footer2 {
+            width: 80%;
+            height: 120px;
+            background-color: #bababa;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <main id="main">
+            <header id="header">
+                <h1 class="logo"></h1>
+                <nav class="menu"></nav>
+            </header>
+            <!-- //header -->
+
+            <section id="contents">
+                <article class="banner"></article>
+                <article class="notice"></article>
+                <article class="gallery"></article>
+                <article class="link"></article>
+            </section>
+            <!-- //contents -->
+
+            <artcle id="slider">
+            </artcle>
+            <!-- //slider -->
+        </main>
+        <!-- //main -->
+        <footer id="footer">
+            <div class="footer1"></div>
+            <div class="footer2"></div>
+        </footer>
+        <!-- //footer -->
+    </div>
+</body>
+
+</html>
