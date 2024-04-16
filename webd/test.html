@@ -4,231 +4,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F-3</title>
+    <title>Document</title>
     <style>
         * {
             margin: 0;
             padding: 0;
         }
 
-        li {
-            list-style: none;
-        }
-
-        a {
-            text-decoration: none;
-            color: #000;
-        }
-
-        #wrap {
-            width: 100%;
-        }
-
         #header {
             width: 100%;
             height: 100px;
-            position: relative;
-            z-index: 10;
+            background-color: #ccc;
         }
 
-        #header::after {
-            content: '';
+        #slider {
             width: 100%;
-            height: 0;
-            position: absolute;
-            left: 0;
-            top: 100px;
-            background-color: #8a8a8a;
-            transition: all 400ms;
+            height: 300px;
+            background-color: #ddd;
         }
 
-        #header.on::after {
-            height: 158px;
+        .container {
+            width: 1200px;
+            height: inherit;
+            background-color: rgba(0, 0, 0, 0.3);
+            margin: 0 auto;
         }
 
         #header .container {
             display: flex;
         }
 
-        #header h1 {
+        #header .container .logo {
             width: 20%;
             height: 100px;
-            background-color: #bbb;
+            background-color: #888888;
         }
 
-        #header nav {
+        #header .container .nav {
             width: 80%;
             height: 100px;
-            background-color: #aaa;
-            position: relative;
-            z-index: 100;
+            background-color: #6f6f6f;
         }
 
-        #header nav>ul {
+        #header .nav>ul {
             display: flex;
             justify-content: right;
             margin-top: 60px;
         }
 
-        #header nav>ul>li>a {
-            padding: 10px 60px;
-            background-color: #eee;
+        #header .nav>ul>li {
+            list-style: none;
+        }
+
+        #header .nav>ul>li>a {
+            text-decoration: none;
+            color: #000;
+            background-color: #fc6464;
+            padding: 10px 40px;
             display: inline-block;
         }
 
-        #header nav>ul>li>a:hover {
-            background-color: #cecece;
+        #header .nav>ul>li>a:hover {
+            background-color: #ff9191;
         }
 
-        #header nav>ul>li>ul {
+        #header .nav>ul>li>ul {
+            text-align: center;
             display: none;
         }
 
-        #header nav>ul>li>ul>li {
-            text-align: center;
+        #header .nav>ul>li>ul>li {
+            list-style: none;
         }
 
-        #header nav>ul>li>ul>li>a {
-            padding: 10px;
+        #header .nav>ul>li>ul>li>a {
+            background-color: #d55656;
+            width: 100%;
+            padding: 10px 40px;
             display: inline-block;
-            width: 100%;
             box-sizing: border-box;
+            text-decoration: none;
+            color: #fff;
         }
 
-        #header nav>ul>li>ul>li>a:hover {
-            background-color: #aaa;
+        #header .nav>ul>li>ul>li>a:hover {
+            background-color: #b74343;
         }
 
-        #slider {
-            width: 100%;
-            height: 350px;
-            background-color: #ccc;
+        .slider-wrap {
             position: relative;
         }
 
-        #slider .link {
-            width: 1340px;
-            height: 100px;
-            background-color: #ddd;
+        .slider-wrap .slider {
             position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-        }
-
-        #contents {
+            left: 0;
+            top: 0;
             width: 100%;
-            height: 400px;
+            height: 300px;
+            overflow: hidden;
         }
 
-        #contents .banner {}
-
-        #contents .notice {}
-
-        #footer {
+        .slider-wrap .slider img {
             width: 100%;
-            height: 120px;
-        }
-
-        #footer .footer1 {}
-
-        #footer .footer2 {}
-
-        #footer .footer2 .footer2-1 {}
-
-        #footer .footer2 .footer2-2 {}
-
-        .container {
-            width: 1340px;
-            height: inherit;
-            margin: 0 auto;
-            background-color: rgba(0, 0, 0, 0.4);
+            vertical-align: top;
         }
     </style>
 </head>
 
 <body>
-    <div id="wrap">
-        <header id="header">
-            <div class="container">
-                <h1></h1>
-                <nav>
-                    <ul>
-                        <li><a href="#">조회</a>
-                            <ul>
-                                <li><a href="#">계좌조회</a></li>
-                                <li><a href="#">거래내역조회</a></li>
-                                <li><a href="#">휴면계좌 조회</a></li>
-                                <li><a href="#">수표/어음 조회</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">이체</a>
-                            <ul>
-                                <li><a href="#">계좌이체</a></li>
-                                <li><a href="#">다계좌이체</a></li>
-                                <li><a href="#">자동이체</a></li>
-                                <li><a href="#">예약이체</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">공과금</a>
-                            <ul>
-                                <li><a href="#">지로/생활요금</a></li>
-                                <li><a href="#">지방새</a></li>
-                                <li><a href="#">국세/관세</a></li>
-                                <li><a href="#">벌칙금/벌과금</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">외환</a>
-                            <ul>
-                                <li><a href="#">금리</a></li>
-                                <li><a href="#">환율/외화예금</a></li>
-                                <li><a href="#">글로벌뱅킹</a></li>
-                                <li><a href="#">외화송금</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
+    <header id="header">
+        <div class="container">
+            <div class="logo"></div>
+            <div class="nav">
+                <ul>
+                    <li><a href="#">1차 메뉴</a>
+                        <ul>
+                            <li><a href="#">2차 메뉴</a></li>
+                            <li><a href="#">2차 메뉴</a></li>
+                            <li><a href="#">2차 메뉴</a></li>
+                            <li><a href="#">2차 메뉴</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">1차 메뉴</a>
+                        <ul>
+                            <li><a href="#">2차 메뉴</a></li>
+                            <li><a href="#">2차 메뉴</a></li>
+                            <li><a href="#">2차 메뉴</a></li>
+                            <li><a href="#">2차 메뉴</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">1차 메뉴</a>
+                        <ul>
+                            <li><a href="#">2차 메뉴</a></li>
+                            <li><a href="#">2차 메뉴</a></li>
+                            <li><a href="#">2차 메뉴</a></li>
+                            <li><a href="#">2차 메뉴</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">1차 메뉴</a>
+                        <ul>
+                            <li><a href="#">2차 메뉴</a></li>
+                            <li><a href="#">2차 메뉴</a></li>
+                            <li><a href="#">2차 메뉴</a></li>
+                            <li><a href="#">2차 메뉴</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-        </header>
-        <!-- //header -->
-
-        <article id="slider">
-            <div class="link"></div>
-        </article>
-        <!-- //slider -->
-
-        <main id="contents">
-            <div class="container">
-                <section class="banner"></section>
-                <section class="notice"></section>
+        </div>
+    </header>
+    <article id="slider">
+        <div class="slider-wrap">
+            <div class="slider">
+                <img src="https://webstoryboy.github.io/webstoryboy/w_webd/slider/slider01.jpg" alt="이미지 1">
             </div>
-        </main>
-        <!-- //contents -->
-
-        <footer id="footer">
-            <div class="container">
-                <div class="footer1"></div>
-                <div class="footer2">
-                    <div class="footer2-1"></div>
-                    <div class="footer2-2"></div>
-                </div>
+            <div class="slider">
+                <img src="https://webstoryboy.github.io/webstoryboy/w_webd/slider/slider02.jpg" alt="이미지 2">
             </div>
-        </footer>
-        <!-- //footer -->
-    </div>
+            <div class="slider">
+                <img src="https://webstoryboy.github.io/webstoryboy/w_webd/slider/slider03.jpg" alt="이미지 3">
+            </div>
+        </div>
+    </article>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        $(function () {
-            $("nav > ul > li").mouseover(function () {
-                $("nav > ul > li > ul").stop().fadeIn();
-                $("#header").addClass("on");
-            });
-            $("nav > ul > li").mouseout(function () {
-                $("nav > ul > li > ul").stop().fadeOut();
-                $("#header").removeClass("on");
-            });
-        });
+        // //1차 메뉴를 클릭했을 때/ 1차메뉴 백그라운 색을 검은색으로 변경하시요!!!
+        // $(".nav>ul>li").click(function () {
+        //     $(".nav>ul>li>a").css("backgroundColor", "black");
+        // });
+
+        // //1차 메뉴를 클릭했을 때/ 클릭한 1차메뉴 백그라운 색을 검은색으로 변경하시요!!!
+        // $(".nav>ul>li").click(function () {
+        //     $(this).find("a").css("backgroundColor", "black");
+        // });
+
+        // 1차 메뉴를 오버 했을 때 2차 메뉴를 보이게 해주세요!
+
+        // 1차 메뉴를 아웃 했을 때 2차 메뉴를 숨겨주세요!
+
+        // 1차 메뉴를 오버 했을 때 해당 2차 메뉴를 보이게 해주세요!
+
+        // 1차 메뉴를 아웃 했을 때 해당 2차 메뉴를 숨겨주세요!
+
+        // 이미지 슬라이드
+
+
     </script>
 </body>
 
