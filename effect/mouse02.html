@@ -13,7 +13,7 @@
 
     <style>
         body {
-            /* cursor: none; */
+            cursor: none;
         }
 
         .main__inner {
@@ -54,45 +54,49 @@
         }
 
         .cursor {
-            width: 100px;
-            height: 100px;
-            background-color: #ffffff43;
-            border: 1px solid #ffffff20;
-            backdrop-filter: blur(5px);
             position: absolute;
-            left: -100px;
-            top: -100px;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            z-index: 9999;
             border-radius: 50%;
-            z-index: 10000;
+            background: rgba(255, 255, 255, 0.3);
             user-select: none;
             pointer-events: none;
-            transition:
-                transform 0.5s,
-                background-color 0.3s,
-                border 0.3s,
-                border-radius 0.3s;
+            transition: transform 0.3s, opacity 0.2s;
         }
 
-        .cursor::before {
-            content: '';
-            width: 20px;
-            height: 1px;
-            background-color: #fff;
+        .cursor2 {
             position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            z-index: 9998;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            user-select: none;
+            pointer-events: none;
+            transition: transform 0.3s, opacity 0.2s;
         }
 
-        .cursor::after {
-            content: '';
-            width: 1px;
-            height: 20px;
-            background-color: #fff;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+        .cursor.active {
+            transform: scale(0.5);
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .cursor2.active {
+            transform: scale(3);
+            background: rgba(255, 166, 0, 0.5);
+        }
+
+        .cursor2.active.yellow {
+            background: rgba(255, 166, 0, 0.5);
+        }
+
+        .cursor2.active.red {
+            background: rgba(255, 0, 0, 0.5);
         }
     </style>
 </head>
@@ -108,8 +112,11 @@
 
         <main id="main">
             <div class="cursor"></div>
+            <div class="cursor2"></div>
             <div class="main__inner">
-                <p>JavaScript</p>
+                <p><span class="j">J</span><span>a</span><span>v</span><span>a</span><span
+                        class="s">S</span><span>c</span><span>r</span><span>i</span><span>p</span><span>t</span>
+                </p>
             </div>
             <div class="main__info">
                 <ul>
@@ -156,9 +163,27 @@
 
         // mouse
         document.addEventListener("mousemove", (e) => {
-            gsap.to(".cursor", { duration: 0.6, left: e.clientX - 50, top: e.clientY - 50 })
+            gsap.to(".cursor", { duration: 0.3, left: e.clientX - 10, top: e.clientY - 10 })
+            gsap.to(".cursor2", { duration: 0.7, left: e.clientX - 50, top: e.clientY - 50 })
         });
 
+        document.querySelector(".s").addEventListener("mouseenter", () => {
+            document.querySelector(".cursor").classList.add("active", "yellow");
+            document.querySelector(".cursor2").classList.add("active", "yellow");
+        });
+        document.querySelector(".s").addEventListener("mouseleave", () => {
+            document.querySelector(".cursor").classList.remove("active", "yellow");
+            document.querySelector(".cursor2").classList.remove("active", "yellow");
+        });
+
+        document.querySelector(".j").addEventListener("mouseenter", () => {
+            document.querySelector(".cursor").classList.add("active", "red");
+            document.querySelector(".cursor2").classList.add("active", "red");
+        });
+        document.querySelector(".j").addEventListener("mouseleave", () => {
+            document.querySelector(".cursor").classList.remove("active", "red");
+            document.querySelector(".cursor2").classList.remove("active", "red");
+        });
 
     </script>
 </body>
