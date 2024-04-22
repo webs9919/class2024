@@ -61,6 +61,8 @@ body {
 
 #footer {
     width: 100%;
+    position: relative;
+    z-index: 20000;
 }
 
 .footer__inner ul {
@@ -79,6 +81,7 @@ body {
     display: inline-block;
     font-family: 'Montserrat';
     line-height: 1;
+    background-color: #272727;
 }
 
 .footer__inner ul li.active a {
@@ -88,8 +91,8 @@ body {
 
 .footer__inner .link {
     position: absolute;
-    right: 20px;
-    bottom: 20px;
+    right: 0;
+    bottom: 0;
 }
 
 .footer__inner .link a {
@@ -101,4 +104,5 @@ body {
     background-size: 12px;
     background-repeat: no-repeat;
     background-position: right 8px center;
+    background-color: #272727;
 }

@@ -20,6 +20,14 @@ body {
 }
 
 /* header */
+#header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+}
+
 .header__inner {
     padding: 20px;
     position: relative;
@@ -29,7 +37,10 @@ body {
     font-family: 'Poppins';
     font-weight: 200;
     font-size: 40px;
-    letter-spacing: -0.1vw;
+    letter-spacing: -0.1px;
+    line-height: 1;
+    margin-bottom: 5px;
+    display: inline-block;
 }
 
 .header__inner p {
@@ -39,8 +50,8 @@ body {
 
 .header__inner .link {
     position: absolute;
-    right: 10px;
-    top: 100px;
+    right: 20px;
+    top: 20px;
 }
 
 .header__inner .link a {
