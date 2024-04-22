@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -9,188 +9,71 @@
         * {
             margin: 0;
             padding: 0;
-        }
-
-        #header {
-            width: 100%;
-            height: 100px;
-            background-color: #ccc;
+            box-sizing: border-box;
         }
 
         #slider {
-            width: 100%;
-            height: 300px;
-            background-color: #ddd;
-        }
-
-        .container {
             width: 1200px;
-            height: inherit;
-            background-color: rgba(0, 0, 0, 0.3);
-            margin: 0 auto;
-        }
-
-        #header .container {
-            display: flex;
-        }
-
-        #header .container .logo {
-            width: 20%;
-            height: 100px;
-            background-color: #888888;
-        }
-
-        #header .container .nav {
-            width: 80%;
-            height: 100px;
-            background-color: #6f6f6f;
-        }
-
-        #header .nav>ul {
-            display: flex;
-            justify-content: right;
-            margin-top: 60px;
-        }
-
-        #header .nav>ul>li {
-            list-style: none;
-        }
-
-        #header .nav>ul>li>a {
-            text-decoration: none;
-            color: #000;
-            background-color: #fc6464;
-            padding: 10px 40px;
-            display: inline-block;
-        }
-
-        #header .nav>ul>li>a:hover {
-            background-color: #ff9191;
-        }
-
-        #header .nav>ul>li>ul {
-            text-align: center;
-            display: none;
-        }
-
-        #header .nav>ul>li>ul>li {
-            list-style: none;
-        }
-
-        #header .nav>ul>li>ul>li>a {
-            background-color: #d55656;
-            width: 100%;
-            padding: 10px 40px;
-            display: inline-block;
-            box-sizing: border-box;
-            text-decoration: none;
-            color: #fff;
-        }
-
-        #header .nav>ul>li>ul>li>a:hover {
-            background-color: #b74343;
-        }
-
-        .slider-wrap {
-            position: relative;
-        }
-
-        .slider-wrap .slider {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
             height: 300px;
+            margin: 0 auto;
+            background-color: #ccc;
             overflow: hidden;
         }
 
-        .slider-wrap .slider img {
-            width: 100%;
-            vertical-align: top;
+        .slider-wrap {
+            display: flex;
+            width: 6000px;
+        }
+
+        .slider-wrap .slider {
+            width: 1200px;
+            height: 300px;
+            text-align: center;
+            line-height: 300px;
+            font-size: 24px;
+            background-color: red;
+        }
+
+        .slider-wrap .slider.s2 {
+            background-color: aquamarine;
+        }
+
+        .slider-wrap .slider.s3 {
+            background-color: blueviolet
+        }
+
+        .slider-wrap .slider.s4 {
+            background-color: bisque
         }
     </style>
 </head>
 
 <body>
-    <header id="header">
-        <div class="container">
-            <div class="logo"></div>
-            <div class="nav">
-                <ul>
-                    <li><a href="#">1차 메뉴</a>
-                        <ul>
-                            <li><a href="#">2차 메뉴</a></li>
-                            <li><a href="#">2차 메뉴</a></li>
-                            <li><a href="#">2차 메뉴</a></li>
-                            <li><a href="#">2차 메뉴</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">1차 메뉴</a>
-                        <ul>
-                            <li><a href="#">2차 메뉴</a></li>
-                            <li><a href="#">2차 메뉴</a></li>
-                            <li><a href="#">2차 메뉴</a></li>
-                            <li><a href="#">2차 메뉴</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">1차 메뉴</a>
-                        <ul>
-                            <li><a href="#">2차 메뉴</a></li>
-                            <li><a href="#">2차 메뉴</a></li>
-                            <li><a href="#">2차 메뉴</a></li>
-                            <li><a href="#">2차 메뉴</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">1차 메뉴</a>
-                        <ul>
-                            <li><a href="#">2차 메뉴</a></li>
-                            <li><a href="#">2차 메뉴</a></li>
-                            <li><a href="#">2차 메뉴</a></li>
-                            <li><a href="#">2차 메뉴</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </header>
-    <article id="slider">
+    <div id="slider">
         <div class="slider-wrap">
-            <div class="slider">
-                <img src="https://webstoryboy.github.io/webstoryboy/w_webd/slider/slider01.jpg" alt="이미지 1">
-            </div>
-            <div class="slider">
-                <img src="https://webstoryboy.github.io/webstoryboy/w_webd/slider/slider02.jpg" alt="이미지 2">
-            </div>
-            <div class="slider">
-                <img src="https://webstoryboy.github.io/webstoryboy/w_webd/slider/slider03.jpg" alt="이미지 3">
-            </div>
+            <div class="slider s1">slider1</div>
+            <div class="slider s2">slider2</div>
+            <div class="slider s3">slider3</div>
+            <div class="slider s4">slider4</div>
         </div>
-    </article>
-
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        // //1차 메뉴를 클릭했을 때/ 1차메뉴 백그라운 색을 검은색으로 변경하시요!!!
-        // $(".nav>ul>li").click(function () {
-        //     $(".nav>ul>li>a").css("backgroundColor", "black");
-        // });
+        let currentIndex = 0;
+        $(".slider-wrap").append($(".slider").first().clone(true));
 
-        // //1차 메뉴를 클릭했을 때/ 클릭한 1차메뉴 백그라운 색을 검은색으로 변경하시요!!!
-        // $(".nav>ul>li").click(function () {
-        //     $(this).find("a").css("backgroundColor", "black");
-        // });
+        setInterval(() => {
+            currentIndex++;
+            $(".slider-wrap").animate({ marginLeft: -1200 * currentIndex + "px" }, 400)
 
-        // 1차 메뉴를 오버 했을 때 2차 메뉴를 보이게 해주세요!
-
-        // 1차 메뉴를 아웃 했을 때 2차 메뉴를 숨겨주세요!
-
-        // 1차 메뉴를 오버 했을 때 해당 2차 메뉴를 보이게 해주세요!
-
-        // 1차 메뉴를 아웃 했을 때 해당 2차 메뉴를 숨겨주세요!
-
-        // 이미지 슬라이드
-
-
+            if (currentIndex == 4) {
+                setTimeout(() => {
+                    $(".slider-wrap").animate({ marginLeft: 0 }, 0);
+                    currentIndex = 0;
+                }, 1000)
+            }
+        }, 2000);
     </script>
 </body>
 
