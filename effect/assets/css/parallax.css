@@ -19,6 +19,11 @@ body {
     background-color: #DCB8B8;
 }
 
+body.bg2 {
+    background-color: #BFCABD;
+}
+
+
 /* header */
 #header {
     position: fixed;
@@ -63,4 +68,30 @@ body {
     background-size: 13px;
     background-repeat: no-repeat;
     background-position: right center;
+}
+
+
+/* footer__inner */
+.footer__inner nav {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    font-family: 'Poppins';
+}
+
+.footer__inner nav ul {
+    display: flex;
+}
+
+.footer__inner nav li a {
+    margin-right: 5px;
+    padding: 4px 10px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'NexonLv1Gothic';
+}
+
+.footer__inner nav li.active a {
+    text-emphasis: circle;
 }
