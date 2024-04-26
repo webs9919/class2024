@@ -1,45 +1,34 @@
-import requests as req
-from bs4 import BeautifulSoup as bs
-import pandas as pd
+import requests
+from bs4 import BeautifulSoup
+import json
 import datetime
 
+# 현재 날짜를 문자열로 저장
 current_date = datetime.datetime.now().strftime("%Y-%m-%d")
 
-res = req.get("https://music.bugs.co.kr/chart")
-soup = bs(res.text, "lxml")
-# print(soup)
+# 웹 페이지로부터 데이터 요청 및 수신
+response = requests.get("https://music.bugs.co.kr/chart")
+soup = BeautifulSoup(response.text, "lxml")
 
 # 데이터 선택
-ranking = soup.select(".ranking > strong")
-title = soup.select(".title > a")
-artist = soup.select(".artist > a:nth-child(1)")
+rankings = [rank.text.strip() for rank in soup.select(".ranking > strong")]
+titles = [title.text.strip() for title in soup.select(".title > a")]
+artists = [artist.text.strip() for artist in soup.select(".artist > a:nth-child(1)")]
+images = [img['src'].strip() for img in soup.select(".thumbnail > img")]
 
-# print(len(ranking))
-# print(len(title))
-# print(len(artist))
+# 데이터를 리스트 of 딕셔너리 형태로 구성
+chart_data = []
+for ranking, title, artist, image_url in zip(rankings, titles, artists, images):
+    chart_data.append({
+        "Ranking": ranking,
+        "Title": title,
+        "Artist": artist,
+        "ImageURL": image_url
+    })
 
-# 데이터 저장 
-# rankingList = []
-# titleList = []
-# artistList = []
-
-# for i in range(len(ranking)) :
-#     rankingList.append(ranking[i].text)
-#     titleList.append(title[i].text)
-#     artistList.append(artist[i].text)
-
-# 데이터 저장
-rankingList = [r.text.strip() for r in ranking]
-titleList = [t.text.strip() for t in title]
-artistList = [a.text.strip() for a in artist]
-
-# 데이터 프레임 생성
-chart_df = pd.DataFrame({
-    'Ranking': rankingList,
-    'Title': titleList,
-    'Artist': artistList
-})
+# 파일 이름 설정
+file_name = f"bugs100_{current_date}.json"
 
 # JSON 파일로 저장
-file_name = f"bugsChart100_{current_date}.json"
-chart_df.to_json(file_name, force_ascii=False, orient="records")
+with open(file_name, 'w', encoding='utf-8') as file:
+    json.dump(chart_data, file, ensure_ascii=False, indent=4)
